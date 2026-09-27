@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#EAF4FF"><meta name="robots" content="noindex,nofollow">
+<title>My Study Space — Study Square</title><link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light"><script>try{if(localStorage.getItem('study-square-theme')==='dark'){document.body.setAttribute('data-theme','dark');document.querySelector('meta[name="theme-color"]').setAttribute('content','#0B1220')}}catch(e){}</script>
+<div class="dashboard-shell">
+<header class="workspace-head"><div class="workspace-head-inner">
+  <a class="workspace-brand" href="dashboard.html"><img src="logo.png" alt=""><span>Study Square<small>My workspace</small></span></a>
+  <div class="workspace-actions">
+    <span class="account-chip" id="account-email">School account</span>
+    <a class="workspace-twiga" href="twiga/index.html">Twiga</a>
+    <button class="theme-toggle" data-theme-toggle type="button" id="theme-toggle"><span class="theme-dot"></span><span class="theme-label">Dark mode</span></button>
+    <button class="logout-button" id="sign-out" type="button"><span class="icon-slot" data-icon="ArrowDoorIn" aria-hidden="true"></span> Sign out</button>
+  </div>
+</div></header>
+
+<main class="workspace-main">
+  <section class="workspace-welcome" data-reveal>
+    <div>
+      <span class="sticker sky" id="today-label">TODAY</span>
+      <h1 id="welcome-title">Your study space.</h1>
+      <p>Everything here comes from what you add. Nothing is pre-filled.</p>
+    </div>
+  </section>
+
+  <div class="workspace-stats">
+    <article class="stat-card" data-reveal><div class="stat-label">Your subjects</div><div class="stat-value" id="stat-subjects">0</div></article>
+    <article class="stat-card" data-reveal><div class="stat-label">Schoolwork items</div><div class="stat-value" id="stat-tasks">0</div></article>
+    <article class="stat-card" data-reveal><div class="stat-label">Completed</div><div class="stat-value" id="stat-done">0</div></article>
+  </div>
+
+  <section class="workspace-section" id="subjects" data-reveal>
+    <div class="workspace-section-head">
+      <div><h2>Your subjects</h2><p>Choose the subjects you actually study.</p></div>
+      <button class="solid-button" id="open-subject"><span class="icon-slot" data-icon="Add" aria-hidden="true"></span> Add a new subject</button>
+    </div>
+    <div id="subjects-content"></div>
+  </section>
+
+  <section class="workspace-section" id="schoolwork" data-reveal>
+    <div class="workspace-section-head">
+      <div><h2>Schoolwork</h2><p>Assignments and tasks you add yourself.</p></div>
+      <button class="outline-button" id="open-task"><span class="icon-slot" data-icon="Add" aria-hidden="true"></span> Add task</button>
+    </div>
+    <div id="tasks-content"></div>
+  </section>
+</main>
+<footer class="workspace-foot">Study Square · Your workspace is personal to this browser in this prototype.</footer>
+</div>
+
+<div class="modal-backdrop" id="task-modal" hidden><section class="workspace-modal" role="dialog" aria-modal="true" aria-labelledby="task-modal-title">
+  <h2 id="task-modal-title">Add schoolwork</h2><p>Create an assignment or task and connect it to a subject.</p>
+  <form class="modal-form" id="task-form">
+    <label>Task title<input id="task-title" maxlength="120" placeholder="e.g. Chapter 3 revision" required></label>
+    <label>Subject<select id="task-subject" required></select></label>
+    <label>Due date<input id="task-due" type="date"></label>
+    <div class="status-message" id="task-message" aria-live="polite"></div>
+    <div class="modal-actions"><button class="outline-button" type="button" data-close="task-modal">Cancel</button><button class="solid-button" type="submit">Add task</button></div>
+  </form>
+</section></div>
+
+<div class="workspace-toast" id="workspace-toast" role="status" aria-live="polite" hidden></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js"></script>
+<script src="theme.js"></script>
+<script src="motion.js"></script>
+<script src="dashboard.js"></script>
+<script type="module" src="icons.js"></script>
+</body></html>

@@ -1,0 +1,56 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#EAF4FF"><meta name="robots" content="noindex,nofollow"><title>Sign in · Study Square</title><link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head><body>
+<main class="auth-page">
+  <aside class="auth-visual">
+    <a class="auth-brand" href="index.html"><img src="logo.png" alt=""><span>Study Square<small>A calmer way to stay organized</small></span></a>
+    <div class="auth-pitch">
+      <p class="sticker paper">Your school. Your study space.</p>
+      <h1>Make room for<br>what you're learning.</h1>
+      <p>Sign in with your school email to keep your subjects, assignments, and progress together in one personal workspace.</p>
+    </div>
+    <div class="auth-visual-foot">Study Square · Student workspace</div>
+  </aside>
+
+  <section class="auth-panel">
+    <div class="auth-card">
+      <div class="auth-card-top">
+        <span class="sticker sky">STUDENT ACCESS</span>
+        <a class="auth-back" href="index.html"><span class="icon-slot" data-icon="ArrowDoorIn" aria-hidden="true"></span> Back to home</a>
+      </div>
+      <h2 id="auth-title">Welcome back</h2>
+      <p class="auth-subtitle" id="auth-subtitle">Use your Rusinga student email to continue to your workspace.</p>
+
+      <div class="auth-tabs" role="tablist">
+        <div class="auth-tab-glider" id="auth-tab-glider" aria-hidden="true"></div>
+        <button class="auth-tab" id="tab-signin" role="tab" aria-selected="true" type="button">Sign in</button>
+        <button class="auth-tab" id="tab-create" role="tab" aria-selected="false" type="button">Create account</button>
+      </div>
+
+      <form class="auth-form" id="signin-form">
+        <label>School email<input id="signin-email" type="email" placeholder="john.doe@student.rusinga.ac.ke" autocomplete="username" required pattern="[A-Za-z0-9]+([._-][A-Za-z0-9]+)*@student\.rusinga\.ac\.ke"><span class="auth-hint">Only addresses ending in @student.rusinga.ac.ke are accepted.</span></label>
+        <label>Password<input id="signin-password" type="password" autocomplete="current-password" minlength="8" required></label>
+        <div class="auth-message" id="signin-message" aria-live="polite"></div>
+        <button class="auth-submit" type="submit">Sign in to Study Square <span class="icon-slot" data-icon="Send" aria-hidden="true"></span></button>
+      </form>
+
+      <form class="auth-form" id="create-form" hidden>
+        <label>School email<input id="create-email" type="email" placeholder="john.doe@student.rusinga.ac.ke" autocomplete="email" required pattern="[A-Za-z0-9]+([._-][A-Za-z0-9]+)*@student\.rusinga\.ac\.ke"><span class="auth-hint">Use your official student email. Other domains will be rejected.</span></label>
+        <label>Create password<input id="create-password" type="password" autocomplete="new-password" minlength="12" required><span class="auth-hint">Use at least 12 characters. A mix of words, numbers, and symbols is recommended.</span></label>
+        <label>Confirm password<input id="create-confirm" type="password" autocomplete="new-password" minlength="12" required></label>
+        <div class="auth-message" id="create-message" aria-live="polite"></div>
+        <button class="auth-submit" type="submit">Create student account <span class="icon-slot" data-icon="Send" aria-hidden="true"></span></button>
+      </form>
+
+      <div class="auth-notice"><strong>Prototype security notice</strong><br>This static demo validates the school email format and stores a salted password hash in this browser only. It does not verify that the email belongs to you. Production-grade account security requires a secure server, verified school email, and server-side authentication.</div>
+      <p class="auth-legal">By continuing, you are using the Study Square student workspace prototype. Your prototype account and workspace data stay in this browser.</p>
+    </div>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="motion.js"></script>
+<script src="auth.js"></script>
+<script type="module" src="icons.js"></script>
+</body></html>

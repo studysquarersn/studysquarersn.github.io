@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#EAF4FF" />
+  <meta name="description" content="Study Square — a focused school workspace for learning resources and schoolwork." />
+  <title>Study Square</title>
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Study Square" />
+  <meta property="og:description" content="Everything you need to stay on top of schoolwork — subjects, resources, assignments and progress in one place." />
+  <meta property="og:image" content="favicon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Study Square" />
+  <meta name="twitter:description" content="Everything you need to stay on top of schoolwork — subjects, resources, assignments and progress in one place." />
+  <meta name="twitter:image" content="favicon.png" />
+
+  <link rel="icon" href="favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-theme="light">
+  <script>
+    try {
+      if (localStorage.getItem('study-square-theme') === 'dark') {
+        document.body.setAttribute('data-theme', 'dark');
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0B1220');
+      }
+    } catch (e) {}
+  </script>
+
+  <!-- ============ Loader ============ -->
+  <div class="ss-loader" aria-hidden="true">
+    <div class="ss-loader-mark">
+      <img src="logo.png" alt="" />
+      <div class="ss-loader-bar"><div class="ss-loader-fill"></div></div>
+      <span class="ss-loader-word">Opening your desk…</span>
+    </div>
+  </div>
+
+  <!-- ============ Header ============ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#home" aria-label="Study Square home">
+        <img src="logo.png" alt="Study Square" />
+        <span class="brand-fallback">Study Square</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#features">Features</a>
+        <a href="twiga/index.html">Twiga</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" data-theme-toggle type="button" aria-label="Switch to dark mode">
+          <span class="theme-dot" aria-hidden="true"></span>
+          <span class="theme-label">Dark mode</span>
+        </button>
+        <button class="sign-in" id="sign-in" type="button">Sign in</button>
+      </div>
+
+      <button class="mobile-menu" id="mobile-menu" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+      <a href="#home">Home</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#features">Features</a>
+      <a href="twiga/index.html">Twiga</a>
+      <div class="mobile-nav-actions">
+        <button class="theme-toggle" id="mobile-theme-toggle" data-theme-toggle type="button" aria-label="Switch to dark mode">
+          <span class="theme-dot" aria-hidden="true"></span>
+          <span class="theme-label">Dark mode</span>
+        </button>
+        <button class="sign-in" id="mobile-sign-in" type="button">Sign in</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ Hero ============ -->
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="sticker"><span class="sticker-dot"></span> Built for students at school</p>
+          <h1>Everything you need to stay on top of <span class="swash">schoolwork.
+            <svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14 C 80 4, 220 4, 296 12" /></svg>
+          </span></h1>
+          <p class="hero-lede">Study Square brings your subjects, learning resources, assignments and progress together in one focused place.</p>
+          <div class="hero-actions">
+            <button class="primary-button" id="get-started" type="button">Get started <span class="icon-slot" data-icon="Send" aria-hidden="true"></span></button>
+            <a class="text-link" href="#how-it-works">See how it works</a>
+          </div>
+          <p class="hero-note">A school platform designed around the way students actually work.</p>
+        </div>
+
+        <div class="hero-visual" aria-label="Preview of Study Square">
+          <div class="desk-card" data-tilt data-tilt-max="6">
+            <div class="tape" aria-hidden="true"></div>
+            <div class="desk-top">
+              <div>
+                <span class="preview-label">STUDY SQUARE</span>
+                <strong>Your school workspace</strong>
+              </div>
+              <span class="preview-status">Ready</span>
+            </div>
+            <div class="preview-rule"></div>
+            <div class="preview-row preview-heading">
+              <span>Today</span><span>Schoolwork</span>
+            </div>
+            <div class="preview-item">
+              <span class="item-mark">01</span>
+              <div><strong>Mathematics</strong><small>Continue your current work</small></div>
+              <span class="item-arrow icon-slot" data-icon="Send" aria-hidden="true"></span>
+            </div>
+            <div class="preview-item">
+              <span class="item-mark blue">02</span>
+              <div><strong>Physics</strong><small>Review your latest resources</small></div>
+              <span class="item-arrow icon-slot" data-icon="Send" aria-hidden="true"></span>
+            </div>
+            <div class="preview-item muted-item">
+              <span class="item-mark pale">03</span>
+              <div><strong>English</strong><small>Next assignment</small></div>
+              <span class="item-arrow icon-slot" data-icon="Send" aria-hidden="true"></span>
+            </div>
+            <div class="preview-footer"><span>Keep learning</span><span>Study Square</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Intro / "How it works" ============ -->
+    <section class="intro-section" id="how-it-works">
+      <div class="section-inner split">
+        <div class="section-heading" data-reveal>
+          <p class="sticker sky">One place for school</p>
+          <h2>Less searching. More studying.</h2>
+        </div>
+        <div class="section-copy" data-reveal>
+          <p>Schoolwork often ends up spread across notebooks, files, messages and different websites. Study Square is designed to give students one clear place to find what they need and understand what comes next.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Features ============ -->
+    <section class="feature-section" id="features">
+      <div class="section-inner">
+        <div class="feature-grid">
+          <article class="feature" data-reveal>
+            <span class="feature-number">01</span>
+            <h3>Subjects</h3>
+            <p>Keep each subject organised with its resources, recent work and study progress in one place.</p>
+          </article>
+          <article class="feature" data-reveal>
+            <span class="feature-number">02</span>
+            <h3>Schoolwork</h3>
+            <p>Keep assignments and upcoming work visible so deadlines do not get buried.</p>
+          </article>
+          <article class="feature" data-reveal>
+            <span class="feature-number">03</span>
+            <h3>Progress</h3>
+            <p>See how your work is developing without turning studying into a collection of noisy statistics.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Closing CTA ============ -->
+    <section class="closing-section">
+      <div class="section-inner closing-inner">
+        <div data-reveal>
+          <p class="sticker paper">Study Square</p>
+          <h2>A clearer place to do schoolwork.</h2>
+        </div>
+        <button class="primary-button" id="closing-start" type="button" data-reveal>Get started <span class="icon-slot" data-icon="Send" aria-hidden="true"></span></button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>Study Square</span>
+      <span>Student learning platform</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js"></script>
+  <script src="theme.js"></script>
+  <script src="nav.js"></script>
+  <script src="motion.js"></script>
+  <script src="app.js"></script>
+  <script type="module" src="icons.js"></script>
+</body>
+</html>
